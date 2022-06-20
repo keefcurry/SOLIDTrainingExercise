@@ -9,5 +9,10 @@ namespace Sample
             decimal multiplier = Convert.ToDecimal(Math.Pow(10, Convert.ToDouble(places)));
             return Math.Ceiling(input * multiplier) / multiplier;
         }
+
+        public static decimal GetRValue(decimal? rvalue)
+        {
+            return (int)rvalue == 0 ? 1 : (int)rvalue;
+        }
     }
 }

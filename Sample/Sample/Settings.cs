@@ -18,7 +18,7 @@ namespace Sample
             {
                 if (_Instance == null)
                 {
-                    _Instance = new Settings();
+                    _Instance = new Settings();                    
                 }
                 return _Instance;
             }
