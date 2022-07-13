@@ -12,15 +12,15 @@ namespace Sample
 
         public decimal TaxAmount => MaterialCost * TaxRate;
         public int? WorkOrderId { get; internal set; }
-        public virtual string Description { get; internal set; }
-        public virtual decimal? Depth { get; set; }
-        public virtual decimal? RValuePerInch { get; set; }
-        public virtual decimal? RValue { get; set; }
+        public string Description { get; internal set; }
+        public decimal? Depth { get; set; }
+        public decimal? RValuePerInch { get; set; }
+        public decimal? RValue { get; set; }
         public virtual decimal Yield { get; private set; } = 0;
         public virtual decimal LaborRate { get; private set; } = 0;
         public virtual decimal Discount { get; private set; } = 0;
         public virtual decimal MarkUp { get; private set; } = 0;
-        public virtual decimal TaxRate { get; set; } = .1M;
+        public decimal TaxRate { get; set; } = .1M;
         public virtual bool Taxable { get; private set; } = true;
         public virtual bool SurchargeExempt { get; private set; } = false;
 
@@ -41,7 +41,7 @@ namespace Sample
         public virtual string Name { get { return BaseDescription; } }
         public virtual decimal AmountPerContainer { get; set; } = 0;
         public virtual decimal ContainersRequired { get; set; } = 0;
-        public virtual string ContainerName { get; set; } = "";
+        public  string ContainerName { get; set; }
         public virtual decimal MaterialCost { get { throw new InvalidOperationException("Invalid Material Type"); } set { } }
         public virtual decimal Profit { get
             {
